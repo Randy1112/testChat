@@ -5,11 +5,11 @@ export class User {
     public userImgUrl:string;
 
     constructor(
-        userName:string,
-        userPassword:string
+        //userName:string,
+        //userPassword:string
     ) {
-        this.userName = userName;
-        this.userPassword = userPassword;
+        //this.userName = userName;
+        //this.userPassword = userPassword;
 
         // l'argument photo est facultatif (ajout du ?), s'il est fourni au constructeur on hydrate la propriété this.photo
         //if (photo) this.photo = photo;

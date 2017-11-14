@@ -45,6 +45,7 @@ InscriptionPageModule = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InscriptionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profil_user__ = __webpack_require__(403);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -54,6 +55,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 /**
@@ -66,28 +68,45 @@ var InscriptionPage = (function () {
     function InscriptionPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.userName = '';
-        this.userPassword = '';
-        this.test = '';
+        this.newUser = new __WEBPACK_IMPORTED_MODULE_2__profil_user__["a" /* User */]();
     }
     InscriptionPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad InscriptionPage');
     };
     InscriptionPage.prototype.loginUser = function () {
-        alert(this.test);
+        alert(this.newUser.userName);
     };
     return InscriptionPage;
 }());
 InscriptionPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-inscription',template:/*ion-inline-start:"/Applications/MAMP/htdocs/testChat/src/pages/inscription/inscription.html"*/'<!--\n  Generated template for the InscriptionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>inscription</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <h1>Devenir membre</h1>\n    <ion-list>\n        <ion-item>\n            <ion-label floating>Pseudo</ion-label>\n            <ion-input type="text" [(ngModel)]="userName"></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label floating>Mot de passe</ion-label>\n            <ion-input type="password" [(ngModel)]="userPassword"></ion-input>\n        </ion-item>\n    </ion-list>\n    <button ion-button full (click)="loginUser()">S\'inscrire</button>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/testChat/src/pages/inscription/inscription.html"*/,
+        selector: 'page-inscription',template:/*ion-inline-start:"/Applications/MAMP/htdocs/testChat/src/pages/inscription/inscription.html"*/'<!--\n  Generated template for the InscriptionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>inscription</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <h1>Devenir membre</h1>\n    <ion-list>\n        <ion-item>\n            <ion-label floating>Pseudo</ion-label>\n            <ion-input type="text" [(ngModel)]="newUser.userName"></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label floating>Mot de passe</ion-label>\n            <ion-input type="password" [(ngModel)]="newUser.userPassword"></ion-input>\n        </ion-item>\n    </ion-list>\n    <button ion-button full (click)="loginUser()">S\'inscrire</button>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/testChat/src/pages/inscription/inscription.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object])
 ], InscriptionPage);
 
 var _a, _b;
 //# sourceMappingURL=inscription.js.map
+
+/***/ }),
+
+/***/ 403:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
+var User = (function () {
+    function User() {
+        //this.userName = userName;
+        //this.userPassword = userPassword;
+        // l'argument photo est facultatif (ajout du ?), s'il est fourni au constructeur on hydrate la propriété this.photo
+        //if (photo) this.photo = photo;
+    }
+    return User;
+}());
+
+//# sourceMappingURL=user.js.map
 
 /***/ })
 

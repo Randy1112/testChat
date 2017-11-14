@@ -18,12 +18,12 @@
     <ion-list>
         <ion-item>
             <ion-label floating>Pseudo</ion-label>
-            <ion-input type="text" [(ngModel)]="userName"></ion-input>
+            <ion-input type="text" [(ngModel)]="newUser.userName"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label floating>Mot de passe</ion-label>
-            <ion-input type="password" [(ngModel)]="userPassword"></ion-input>
+            <ion-input type="password" [(ngModel)]="newUser.userPassword"></ion-input>
         </ion-item>
     </ion-list>
     <button ion-button full (click)="loginUser()">S'inscrire</button>

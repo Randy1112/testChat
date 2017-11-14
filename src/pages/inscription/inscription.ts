@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { FormBuilder, AbstractControl, FormGroup, Validators } from "@angular/forms";
+import { User} from "../profil/user";
 
 /**
  * Generated class for the InscriptionPage page.
@@ -15,12 +17,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class InscriptionPage {
 
-    userName        = '';
-    userPassword    = '';
-    test = '';
+    newUser: User = new User();
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
-
     }
 
     ionViewDidLoad() {
@@ -28,7 +27,8 @@ export class InscriptionPage {
     }
 
     loginUser() {
-        alert(this.test);
+        alert(this.newUser.userName);
+
     }
 
 }
