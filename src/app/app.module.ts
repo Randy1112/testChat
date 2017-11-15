@@ -4,15 +4,20 @@ import { HttpModule } from "@angular/http";
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MyApp } from './app.component';
+import { InscriptionPage } from "../pages/inscription/inscription";
+import { ConnexionPage } from "../pages/connexion/connexion";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { EmojiProvider } from '../providers/emoji';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+      InscriptionPage,
+      ConnexionPage
   ],
   imports: [
     BrowserModule,
@@ -25,13 +30,16 @@ import { EmojiProvider } from '../providers/emoji';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+      InscriptionPage,
+      ConnexionPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    EmojiProvider
+    EmojiProvider,
+    AuthServiceProvider
   ]
 })
 export class AppModule {}

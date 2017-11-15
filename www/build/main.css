@@ -25844,3 +25844,39 @@ page-chat .message-wrap .message.right .msg-content span.triangle {
   border-left-width: 0;
   right: -5px;
 }
+
+page-home button.inscription {
+  margin-bottom: 50px;
+  margin-top: 150px;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #dc4727;
+}
+
+page-home button.connexion {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 250px;
+  background-color: #dc4727;
+}
+
+page-home .logo {
+  margin-top: 10px;
+  margin-left: 120px;
+}
+
+page-home .ass {
+  position: absolute;
+  top: 170px;
+  left: 120px;
+}
+
+page-home div.tabbar.show-tabbar {
+  display: none !important;
+}
+
+page-home .logo_text {
+  margin-top: 10px;
+  margin-left: 135px;
+}

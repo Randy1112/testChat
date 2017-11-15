@@ -1,0 +1,30 @@
+<!--
+  Generated template for the ConnexionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>connexion</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--<form>--> <!--(ngSubmit)="signUpUser()"-->
+    <ion-item>
+      <ion-label floating>Pseudo</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Mot de passe</ion-label>
+      <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+    </ion-item>
+    <button ion-button full (click)="signup()">Se connecter</button>
+  <!--</form>-->
+
+</ion-content>

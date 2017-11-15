@@ -13,18 +13,17 @@
 </ion-header>
 
 
-<ion-content padding>
-  <h1>Devenir membre</h1>
-    <ion-list>
+<<ion-content padding>
+    <!--<form>--> <!--(ngSubmit)="signUpUser()"-->
         <ion-item>
             <ion-label floating>Pseudo</ion-label>
-            <ion-input type="text" [(ngModel)]="newUser.userName"></ion-input>
+            <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label floating>Mot de passe</ion-label>
-            <ion-input type="password" [(ngModel)]="newUser.userPassword"></ion-input>
+            <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
         </ion-item>
-    </ion-list>
-    <button ion-button full (click)="loginUser()">S'inscrire</button>
+        <button ion-button full (click)="signup()">S'inscrire</button>
+    <!--</form>-->
 </ion-content>

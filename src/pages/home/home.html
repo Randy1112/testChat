@@ -1,13 +1,6 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content>
 
-  <ion-list>
-
+    <!--
     <ion-item navPush="Chat"
               [navParams]="toUser">
       <ion-avatar item-left>
@@ -16,5 +9,18 @@
       <h2>Hancock</h2>
       <p>If at first you don’t succeed, call it version 1.0</p>
     </ion-item>
-  </ion-list>
-</ion-content>
+    -->
+    <ion-header>
+      <ion-navbar>
+        <ion-title>Accueil</ion-title>
+      </ion-navbar>
+    </ion-header>
+
+    <ion-content>
+      <img class="logo" width="120px" height="120px" src="./assets/ass.png">
+      <h1 class="logo_text">Tind'Air</h1>
+
+      <button class="inscription" ion-button full (click)="signInUser()">S'inscrire</button>
+      <button class="connexion" ion-button full (click)="loginUser()">Se connecter</button>
+
+    </ion-content>

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
-import { FormBuilder, AbstractControl, FormGroup, Validators } from "@angular/forms";
-import { User} from "../profil/user";
+import { NavController } from "ionic-angular";
+import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
+import {Http, Headers} from '@angular/http';
+import {ProfilPage} from "../profil/profil";
 
 /**
  * Generated class for the InscriptionPage page.
@@ -10,25 +11,33 @@ import { User} from "../profil/user";
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
     selector: 'page-inscription',
-    templateUrl: 'inscription.html',
+    templateUrl: 'inscription.html'
 })
 export class InscriptionPage {
 
-    newUser: User = new User();
+    responseData : any;
+    userData = {"username": "","password": ""};
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    constructor( public navCtrl: NavController, public authService:AuthServiceProvider, public http: Http) {
     }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad InscriptionPage');
     }
 
-    loginUser() {
-        alert(this.newUser.userName);
+    signup() {
+        this.authService.postData(this.userData, 'signup').then((result) => {
 
+            this.responseData = result;
+            console.log(this.responseData);
+            localStorage.setItem('userData', JSON.stringify(this.responseData));
+            //this.navCtrl.push(ProfilPage);
+        }, (err) => {
+            // Error log
+        });
     }
 
 }

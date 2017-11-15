@@ -1,51 +1,53 @@
 webpackJsonp([3],{
 
-/***/ 266:
+/***/ 271:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InscriptionPageModule", function() { return InscriptionPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inscription__ = __webpack_require__(400);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home__ = __webpack_require__(404);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(38);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+/**
+ * Created by hsuanlee on 2017/4/4.
+ */
 
 
 
-var InscriptionPageModule = (function () {
-    function InscriptionPageModule() {
+var HomePageModule = (function () {
+    function HomePageModule() {
     }
-    return InscriptionPageModule;
+    return HomePageModule;
 }());
-InscriptionPageModule = __decorate([
+HomePageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__inscription__["a" /* InscriptionPage */],
-        ],
+        declarations: [__WEBPACK_IMPORTED_MODULE_1__home__["a" /* HomePage */]],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__inscription__["a" /* InscriptionPage */]),
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__home__["a" /* HomePage */]),
         ],
     })
-], InscriptionPageModule);
+], HomePageModule);
 
-//# sourceMappingURL=inscription.module.js.map
+//# sourceMappingURL=home.module.js.map
 
 /***/ }),
 
-/***/ 400:
+/***/ 404:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InscriptionPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profil_user__ = __webpack_require__(403);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inscription_inscription__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__connexion_connexion__ = __webpack_require__(194);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,55 +60,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the InscriptionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var InscriptionPage = (function () {
-    function InscriptionPage(navCtrl, navParams) {
+
+var HomePage = (function () {
+    function HomePage(navCtrl) {
+        //this.toUser = {
+        //toUserId:'210000198410281948',
+        //toUserName:'Hancock'
+        //}
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.newUser = new __WEBPACK_IMPORTED_MODULE_2__profil_user__["a" /* User */]();
     }
-    InscriptionPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad InscriptionPage');
+    HomePage.prototype.signInUser = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__inscription_inscription__["a" /* InscriptionPage */]);
     };
-    InscriptionPage.prototype.loginUser = function () {
-        alert(this.newUser.userName);
+    HomePage.prototype.loginUser = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__connexion_connexion__["a" /* ConnexionPage */]);
     };
-    return InscriptionPage;
+    return HomePage;
 }());
-InscriptionPage = __decorate([
+HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-inscription',template:/*ion-inline-start:"/Applications/MAMP/htdocs/testChat/src/pages/inscription/inscription.html"*/'<!--\n  Generated template for the InscriptionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>inscription</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <h1>Devenir membre</h1>\n    <ion-list>\n        <ion-item>\n            <ion-label floating>Pseudo</ion-label>\n            <ion-input type="text" [(ngModel)]="newUser.userName"></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label floating>Mot de passe</ion-label>\n            <ion-input type="password" [(ngModel)]="newUser.userPassword"></ion-input>\n        </ion-item>\n    </ion-list>\n    <button ion-button full (click)="loginUser()">S\'inscrire</button>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/testChat/src/pages/inscription/inscription.html"*/,
+        selector: 'page-home',template:/*ion-inline-start:"/Applications/MAMP/htdocs/testChat/src/pages/home/home.html"*/'\n\n    <!--\n    <ion-item navPush="Chat"\n              [navParams]="toUser">\n      <ion-avatar item-left>\n        <img src="./assets/to-user.jpg">\n      </ion-avatar>\n      <h2>Hancock</h2>\n      <p>If at first you don’t succeed, call it version 1.0</p>\n    </ion-item>\n    -->\n    <ion-header>\n      <ion-navbar>\n        <ion-title>Accueil</ion-title>\n      </ion-navbar>\n    </ion-header>\n\n    <ion-content>\n      <img class="logo" width="120px" height="120px" src="./assets/ass.png">\n      <h1 class="logo_text">Tind\'Air</h1>\n\n      <button class="inscription" ion-button full (click)="signInUser()">S\'inscrire</button>\n      <button class="connexion" ion-button full (click)="loginUser()">Se connecter</button>\n\n    </ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/testChat/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object])
-], InscriptionPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+], HomePage);
 
-var _a, _b;
-//# sourceMappingURL=inscription.js.map
-
-/***/ }),
-
-/***/ 403:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
-var User = (function () {
-    function User() {
-        //this.userName = userName;
-        //this.userPassword = userPassword;
-        // l'argument photo est facultatif (ajout du ?), s'il est fourni au constructeur on hydrate la propriété this.photo
-        //if (photo) this.photo = photo;
-    }
-    return User;
-}());
-
-//# sourceMappingURL=user.js.map
+//# sourceMappingURL=home.js.map
 
 /***/ })
 
