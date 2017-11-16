@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import {Http, Headers} from '@angular/http';
+import { ProfilPage} from "../profil/profil";
 
 /**
  * Generated class for the ConnexionPage page.
@@ -18,6 +19,7 @@ import {Http, Headers} from '@angular/http';
 export class ConnexionPage {
 
     responseData : any;
+    info : any;
     userData = {"username": "","password": ""};
 
   constructor( public navCtrl: NavController, public authService:AuthServiceProvider, public http: Http) {
@@ -27,13 +29,13 @@ export class ConnexionPage {
     console.log('ionViewDidLoad ConnexionPage');
   }
 
-    signup() {
-        this.authService.postData(this.userData, 'signup').then((result) => {
-
+    login() {
+        this.authService.postData(this.userData, 'login').then((result) => {
             this.responseData = result;
-            console.log(this.responseData);
-            localStorage.setItem('userData', JSON.stringify(this.responseData));
-            //this.navCtrl.push(ProfilPage);
+            localStorage.setItem('userInfo', JSON.stringify(this.responseData));
+            this.info = JSON.parse(localStorage.getItem('userInfo'));
+            //console.log(this.info.userData.username);
+            this.navCtrl.push('ProfilPage');
         }, (err) => {
             // Error log
         });

@@ -17,6 +17,7 @@ export class Chat {
     toUser: UserInfo;
     editorMsg = '';
     showEmojiPicker = false;
+    profil: any;
 
     constructor(public navParams: NavParams,
                 public chatService: ChatService,
@@ -87,14 +88,16 @@ export class Chat {
      */
     sendMsg() {
         if (!this.editorMsg.trim()) return;
+        this.profil = JSON.parse(localStorage.getItem('userInfo'));
 
         // Mock message
         const id = Date.now().toString();
         let newMsg: ChatMessage = {
             messageId: Date.now().toString(),
             userId: this.user.id,
-            userName: this.user.name,
-            userAvatar: this.user.avatar,
+            userName: this.profil.userData.username,
+            //userAvatar: this.user.avatar,
+            userAvatar: (this.profil.userData.img)?this.profil.userData.img:"../assets/inconnu.png",
             toUserId: this.toUser.id,
             time: Date.now(),
             message: this.editorMsg,

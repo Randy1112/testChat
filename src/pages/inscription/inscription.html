@@ -24,6 +24,14 @@
             <ion-label floating>Mot de passe</ion-label>
             <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
         </ion-item>
+        <ion-item>
+            <ion-label floating>Description</ion-label>
+            <ion-input type="text" [(ngModel)]="userData.description"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Photo</ion-label>
+            <ion-input type="text" [(ngModel)]="userData.user_img_url"></ion-input>
+        </ion-item>
         <button ion-button full (click)="signup()">S'inscrire</button>
     <!--</form>-->
 </ion-content>

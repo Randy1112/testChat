@@ -18,7 +18,7 @@ import {ProfilPage} from "../profil/profil";
 export class InscriptionPage {
 
     responseData : any;
-    userData = {"username": "","password": ""};
+    userData = {"username": "","password": "", "description": "", "user_img_url": ""};
 
 
     constructor( public navCtrl: NavController, public authService:AuthServiceProvider, public http: Http) {
@@ -29,15 +29,16 @@ export class InscriptionPage {
     }
 
     signup() {
-        this.authService.postData(this.userData, 'signup').then((result) => {
+        this.authService.postData(this.userData, 'signup');
+        /*.then((result) => {
 
             this.responseData = result;
-            console.log(this.responseData);
+            //console.log(this.responseData);
             localStorage.setItem('userData', JSON.stringify(this.responseData));
             //this.navCtrl.push(ProfilPage);
         }, (err) => {
             // Error log
-        });
+        });*/
     }
 
 }

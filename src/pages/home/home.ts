@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import {NavController, IonicPage} from 'ionic-angular';
 import { InscriptionPage } from "../inscription/inscription";
 import { ConnexionPage } from "../connexion/connexion";
+import {MembresPage} from "../membres/membres";
 
 @IonicPage()
 @Component({
@@ -27,6 +28,10 @@ export class HomePage {
 
   loginUser(){
       this.navCtrl.push(ConnexionPage);
+  }
+
+  listeMembres(){
+      this.navCtrl.push(MembresPage);
   }
 
 

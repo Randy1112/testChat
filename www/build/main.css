@@ -25893,3 +25893,56 @@ page-inscription .text_inscription {
   margin-top: 10px;
   margin-left: 55px;
 }
+
+.user-img {
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 200px;
+  width: 200px;
+  height: 200px;
+  -webkit-box-shadow: 0 0 30px #607d8b;
+  box-shadow: 0 0 30px #607d8b;
+}
+
+.material-card h2 {
+  position: absolute;
+  top: calc(70% - 16px);
+  left: 0;
+  width: 100%;
+  padding: 10px 16px;
+  color: #fff;
+  font-size: 1.4em;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+.material-card h2 strong {
+  font-weight: 400;
+  display: block;
+  font-size: .8em;
+}
+
+.material-card.Blue-Grey h2 {
+  background-color: #607d8b;
+}
+
+.mc-btn-action ion-icon {
+  font-size: 35px;
+  margin-top: 10%;
+  margin-left: 5%;
+}
+
+.mc-btn-action {
+  background-color: #607d8b;
+  position: absolute;
+  right: 55px;
+  top: 50px;
+  border-radius: 50%;
+  border: 3px solid;
+  width: 54px;
+  height: 54px;
+  line-height: 44px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}

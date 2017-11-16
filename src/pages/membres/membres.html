@@ -1,0 +1,31 @@
+<!--
+  Generated template for the MembresPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>membres</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1>Liste des membres</h1>
+  <div class="membre" *ngFor="let membre of membres">
+    <ion-item (click)="versChat()">
+      <ion-avatar item-left>
+        <div *ngIf="membre.img">
+          <img src="{{ membre.img }}">
+        </div>
+        <div *ngIf="!membre.img">
+          <img src="../assets/inconnu.png">
+        </div>
+      </ion-avatar>
+      <h2>{{ membre.username }}</h2>
+    </ion-item>
+  </div>
+</ion-content>

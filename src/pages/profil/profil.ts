@@ -17,8 +17,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilPage {
 
+    userInfo: any;
+
     constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+        this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        //console.log(this.info.userData.username);
     }
+
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad ProfilPage');
