@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MyApp } from './app.component';
 import { InscriptionPage } from "../pages/inscription/inscription";
 import { ConnexionPage } from "../pages/connexion/connexion";
-import { MembresPage } from "../pages/membres/membres";
+import { ModifierProfilPage } from "../pages/modifier-profil/modifier-profil";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +19,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
       InscriptionPage,
       ConnexionPage,
-      MembresPage
+      ModifierProfilPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
       InscriptionPage,
       ConnexionPage,
-      MembresPage
+      ModifierProfilPage
   ],
   providers: [
     StatusBar,

@@ -1,12 +1,13 @@
+/*
 page-home {
 
   button.inscription {
-      margin-bottom: 50px;
-      margin-top: 150px;
+      margin-bottom: 30px;
+      margin-top: 80px;
       max-width: 250px;
       margin-left: auto;
       margin-right: auto;
-      background-color: #dc4727;
+      background-color: #dc7564;
   }
 
   button.connexion {
@@ -18,7 +19,6 @@ page-home {
 
   .logo{
     margin-top:10px;
-    margin-left: 120px;
   }
 
   .ass{
@@ -32,6 +32,41 @@ page-home {
 
   .logo_text{
     margin-top:10px;
-    margin-left: 135px;
+    text-align: center;
   }
+}
+*/
+
+.body{
+  background-color: #793896; /* Le fond de la page sera noir */
+}
+
+button.inscription {
+
+  margin-top: 80px;
+}
+
+button.connexion,button.inscription{
+
+  font-family: "Permanent Marker";
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 150px;
+  color: #000;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 50px;
+  background-color: #da7104;
+}
+
+.logo{
+  margin-top:10px;
+  margin-left: 20px;
+}
+
+.logo_text{
+  font-family: "Permanent Marker";
+  font-size: 30px;
+  margin-top:-15px;
+  margin-left: 80px;
 }

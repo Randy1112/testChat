@@ -16,15 +16,18 @@
 <ion-content padding>
   <!--<form>--> <!--(ngSubmit)="signUpUser()"-->
     <ion-item>
-      <ion-label floating>Pseudo</ion-label>
-      <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
+      <ion-label class="name" floating>Pseudo</ion-label>
+      <ion-input class="text_connexion" type="text" [(ngModel)]="userData.username"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Mot de passe</ion-label>
-      <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+      <ion-label class="name" floating>Mot de passe</ion-label>
+      <ion-input class="text_connexion" type="password" [(ngModel)]="userData.password"></ion-input>
     </ion-item>
-    <button ion-button full (click)="login()">Se connecter</button>
+    <button class="connexion" ion-button full (click)="login()">Se connecter</button>
+  <br>
+  <br>
+  <div [innerHtml]="text" style="color:red; text-align:center"></div>
   <!--</form>-->
 
 </ion-content>

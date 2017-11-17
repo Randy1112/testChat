@@ -18,14 +18,15 @@
   <div class="membre" *ngFor="let membre of membres">
     <ion-item (click)="versChat()">
       <ion-avatar item-left>
-        <div *ngIf="membre.img">
-          <img src="{{ membre.img }}">
+        <div *ngIf="membre.user_img_url">
+          <img src="{{ membre.user_img_url }}">
         </div>
-        <div *ngIf="!membre.img">
+        <div *ngIf="!membre.user_img_url">
           <img src="../assets/inconnu.png">
         </div>
       </ion-avatar>
-      <h2>{{ membre.username }}</h2>
+      <p>{{ membre.username }} <br><span style="font-size:8px">{{ membre.description }}</span></p>
+
     </ion-item>
   </div>
 </ion-content>

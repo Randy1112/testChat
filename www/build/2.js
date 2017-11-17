@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 267:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilPageModule", function() { return ProfilPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MembresPageModule", function() { return MembresPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profil__ = __webpack_require__(395);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__membres__ = __webpack_require__(409);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ProfilPageModule = (function () {
-    function ProfilPageModule() {
+var MembresPageModule = (function () {
+    function MembresPageModule() {
     }
-    return ProfilPageModule;
+    return MembresPageModule;
 }());
-ProfilPageModule = __decorate([
+MembresPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__profil__["a" /* ProfilPage */],
+            __WEBPACK_IMPORTED_MODULE_2__membres__["a" /* MembresPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profil__["a" /* ProfilPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__membres__["a" /* MembresPage */]),
         ],
     })
-], ProfilPageModule);
+], MembresPageModule);
 
-//# sourceMappingURL=profil.module.js.map
+//# sourceMappingURL=membres.module.js.map
 
 /***/ }),
 
-/***/ 395:
+/***/ 409:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MembresPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_auth_service__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(31);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,34 +58,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-//import { User } from './user';
+
+
 /**
- * Generated class for the ProfilPage page.
+ * Generated class for the MembresPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ProfilPage = (function () {
-    function ProfilPage(navCtrl, navParams) {
+var MembresPage = (function () {
+    function MembresPage(navCtrl, authService, http) {
+        var _this = this;
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
-        //console.log(this.info.userData.username);
+        this.authService = authService;
+        this.http = http;
+        this.authService.postData(this.userData, 'membres').then(function (result) {
+            _this.responseData = result;
+            _this.membres = JSON.parse(JSON.stringify(_this.responseData));
+        }, function (err) {
+            // Error log
+        });
     }
-    ProfilPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ProfilPage');
+    MembresPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad MembresPage');
     };
-    return ProfilPage;
+    MembresPage.prototype.versChat = function () {
+        this.navCtrl.push('Chat');
+    };
+    return MembresPage;
 }());
-ProfilPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
+MembresPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-profil',template:/*ion-inline-start:"/Applications/MAMP/htdocs/testChat/src/pages/profil/profil.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Profil\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content>\n\n  <div class="row active-with-click">\n      <img class="user-img" src="{{ userInfo.userData.img }}">\n      <div class="col-xs-12">\n\n          <article class="material-card Blue-Grey">\n            <a class="mc-btn-action"> <ion-icon name="create"></ion-icon></a>\n                  <h2>\n                  <span>{{ userInfo.userData.username }}</span>\n                  <strong>\n                      {{ userInfo.userData.description }}\n                  </strong>\n              </h2>\n          </article>\n\n      </div>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/testChat/src/pages/profil/profil.html"*/,
+        selector: 'page-membres',template:/*ion-inline-start:"/Applications/MAMP/htdocs/testChat/src/pages/membres/membres.html"*/'<!--\n  Generated template for the MembresPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>membres</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <h1>Liste des membres</h1>\n  <div class="membre" *ngFor="let membre of membres">\n    <ion-item (click)="versChat()">\n      <ion-avatar item-left>\n        <div *ngIf="membre.user_img_url">\n          <img src="{{ membre.user_img_url }}">\n        </div>\n        <div *ngIf="!membre.user_img_url">\n          <img src="../assets/inconnu.png">\n        </div>\n      </ion-avatar>\n      <p>{{ membre.username }} <br><span style="font-size:8px">{{ membre.description }}</span></p>\n\n    </ion-item>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Applications/MAMP/htdocs/testChat/src/pages/membres/membres.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-], ProfilPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_auth_service__["a" /* AuthServiceProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]])
+], MembresPage);
 
-//# sourceMappingURL=profil.js.map
+//# sourceMappingURL=membres.js.map
 
 /***/ })
 

@@ -10,17 +10,45 @@
       <p>If at first you don’t succeed, call it version 1.0</p>
     </ion-item>
     -->
+    <!--
     <ion-header>
       <ion-navbar>
         <ion-title>Accueil</ion-title>
       </ion-navbar>
-    </ion-header>
+    </ion-header>-->
 
-    <ion-content>
-      <img class="logo" width="120px" height="120px" src="./assets/ass.png">
-      <h1 class="logo_text">Tind'Air</h1>
+    <ion-content class="body">
+        <!--<p style="text-align: center"><img class="logo" width="120px" height="120px" src="./assets/ass.png"></p>-->
+          <!--
+        <h1 class="logo_text">Tind'Air</h1>
+          <div *ngIf="user">
+              <h2 style="text-align: center">Bonjour {{ user.username }}</h2>
+          </div>
 
-      <button class="inscription" ion-button full (click)="signInUser()">S'inscrire</button>
-      <button class="connexion" ion-button full (click)="loginUser()">Se connecter</button>
-        <button class="connexion" ion-button full (click)="listeMembres()">Liste des membres</button>
+          <div *ngIf="!user">
+              <button class="inscription" ion-button full (click)="signInUser()">S'inscrire</button>
+              <button class="connexion" ion-button full (click)="loginUser()">Se connecter</button>
+          </div>
+          <div *ngIf="user">
+              <button class="deconnexion" ion-button full (click)="logoutUser()">Se déconnecter</button>
+              <button class="suppression" ion-button full (click)="deleteUser()">Se désinscrire</button>
+          </div>
+      </ion-content>
+
+      <ion-content class="body">-->
+        <img class="logo" width="300px" height="200px" src="https://cdn.dribbble.com/users/781167/screenshots/3663086/untitled-1.gif">
+        <h1 class="logo_text">BIG TWERK</h1>
+
+        <div *ngIf="user">
+            <h2 style="text-align: center">Bonjour {{ user.username }}</h2>
+        </div>
+
+        <div *ngIf="!user">
+            <button class="inscription" ion-button full (click)="signInUser()">S'inscrire</button>
+            <button class="connexion" ion-button full (click)="loginUser()">Se connecter</button>
+        </div>
+        <div *ngIf="user">
+            <button class="inscription" ion-button full (click)="logoutUser()">Se déconnecter</button>
+            <button class="connexion" ion-button full (click)="deleteUser()">Se désinscrire</button>
+        </div>
     </ion-content>

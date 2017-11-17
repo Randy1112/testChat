@@ -11,15 +11,15 @@
 <ion-content>
 
   <div class="row active-with-click">
-      <img class="user-img" src="{{ userInfo.userData.img }}">
+      <img class="user-img" src="{{ userInfo.user_img_url }}">
       <div class="col-xs-12">
 
           <article class="material-card Blue-Grey">
-            <a class="mc-btn-action"> <ion-icon name="create"></ion-icon></a>
+            <a class="mc-btn-action" (click)="modifierProfil()"> <ion-icon name="create"></ion-icon></a>
                   <h2>
-                  <span>{{ userInfo.userData.username }}</span>
+                  <span>{{ userInfo.username }}</span>
                   <strong>
-                      {{ userInfo.userData.description }}
+                      {{ userInfo.description }}
                   </strong>
               </h2>
           </article>

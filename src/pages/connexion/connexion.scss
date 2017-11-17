@@ -1,3 +1,26 @@
 page-connexion {
 
+  button.connexion {
+    max-width: 250px;
+    margin-top:30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #793896;
+  }
+
+  ion-input.text_connexion{
+    font-size: 20px;
+    margin-top:10px;
+    margin-left: 55px;
+    color: #793896;
+  }
+
+  .name{
+    font-size: 20px;
+    color: #793896;
+
+  }
+
+
 }
+

@@ -21,19 +21,12 @@ export class MembresPage {
   membres : any;
   responseData : any;
   userData : any;
-  listemembres: any;
 
 
   constructor( public navCtrl: NavController, public authService:AuthServiceProvider, public http: Http) {
       this.authService.postData(this.userData, 'membres').then((result) => {
           this.responseData = result;
-          //console.log(this.responseData);
-          localStorage.setItem('membresInfo', JSON.stringify(this.responseData));
-          this.membres = JSON.parse(localStorage.getItem('membresInfo'));
-
-          console.log(this.membres);
-          //console.log(this.info.userData.username);
-          //this.navCtrl.push('ProfilPage');
+          this.membres = JSON.parse(JSON.stringify(this.responseData));
       }, (err) => {
           // Error log
       });
@@ -43,23 +36,7 @@ export class MembresPage {
     console.log('ionViewDidLoad MembresPage');
   }
 
-  /*
-  listerMembres(){
-      this.authService.postData(this.userData, 'membres').then((result) => {
-          this.responseData = result;
-          //console.log(this.responseData);
-          localStorage.setItem('membresInfo', JSON.stringify(this.responseData));
-          this.membres = JSON.parse(localStorage.getItem('membresInfo'));
-
-          console.log(this.membres);
-          //console.log(this.info.userData.username);
-          //this.navCtrl.push('ProfilPage');
-      }, (err) => {
-          // Error log
-      });
+  versChat() {
+      this.navCtrl.push('Chat');
   }
-  */
-    versChat() {
-        this.navCtrl.push('Chat');
-    }
 }

@@ -10,11 +10,15 @@ export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
   tab1Root: any = 'HomePage';
-  tab2Root: any = 'AboutPage';
+  //tab2Root: any = 'AboutPage';
   //tab3Root: any = 'ContactPage';
   tab4Root: any = 'ProfilPage';
+  tab5Root: any = 'MembresPage';
+
+    membreConnecte: any;
 
   constructor() {
+      this.membreConnecte = localStorage.getItem('userInfo');
 
   }
 }

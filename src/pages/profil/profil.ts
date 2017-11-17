@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-//import { User } from './user';
+import { ModifierProfilPage } from "../modifier-profil/modifier-profil";
 
 /**
  * Generated class for the ProfilPage page.
@@ -20,14 +19,16 @@ export class ProfilPage {
     userInfo: any;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
-
         this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
-        //console.log(this.info.userData.username);
     }
-
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad ProfilPage');
     }
+
+    modifierProfil(){
+        this.navCtrl.push(ModifierProfilPage);
+    }
+
 
 }

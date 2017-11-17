@@ -95,9 +95,8 @@ export class Chat {
         let newMsg: ChatMessage = {
             messageId: Date.now().toString(),
             userId: this.user.id,
-            userName: this.profil.userData.username,
-            //userAvatar: this.user.avatar,
-            userAvatar: (this.profil.userData.img)?this.profil.userData.img:"../assets/inconnu.png",
+            userName: this.profil.username,
+            userAvatar: (this.profil.user_img_url)?this.profil.user_img_url:"../assets/inconnu.png",
             toUserId: this.toUser.id,
             time: Date.now(),
             message: this.editorMsg,

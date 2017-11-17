@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from "ionic-angular";
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import {Http, Headers} from '@angular/http';
-import {ProfilPage} from "../profil/profil";
+import { TabsPage } from "../tabs/tabs";
 
 /**
  * Generated class for the InscriptionPage page.
@@ -17,9 +17,7 @@ import {ProfilPage} from "../profil/profil";
 })
 export class InscriptionPage {
 
-    responseData : any;
     userData = {"username": "","password": "", "description": "", "user_img_url": ""};
-
 
     constructor( public navCtrl: NavController, public authService:AuthServiceProvider, public http: Http) {
     }
@@ -30,15 +28,7 @@ export class InscriptionPage {
 
     signup() {
         this.authService.postData(this.userData, 'signup');
-        /*.then((result) => {
-
-            this.responseData = result;
-            //console.log(this.responseData);
-            localStorage.setItem('userData', JSON.stringify(this.responseData));
-            //this.navCtrl.push(ProfilPage);
-        }, (err) => {
-            // Error log
-        });*/
+        this.navCtrl.push(TabsPage);
     }
 
 }
